@@ -33,22 +33,29 @@
 
 <div class="col-md-12">
     <div class="col-md-4">
-        <form>
+        <form role ="form" th:object="${postBoardReq}" th:action ="@{/board}" method = "post">
+
             <div class="form-group">
-                <label for="title">제목</label>
-                <input type="text" class="form-control" id="title" placeholder="제목을 입력하세요">
+                <label>제목</label>
+                <input type="text" class="form-control" name="title" placeholder="제목을 입력하세요">
             </div>
             <div class="form-group">
-                <label for="author"> 작성자 </label>
-                <input type="text" class="form-control" id="author" placeholder="작성자를 입력하세요">
+                <label> 작성자 </label>
+                <input type="text" class="form-control" name="user"  placeholder="작성자를 입력하세요">
             </div>
             <div class="form-group">
-                <label for="content"> 내용 </label>
-                <textarea class="form-control" id="content" placeholder="내용을 입력하세요"></textarea>
+                <label> 내용 </label>
+                <textarea class="form-control" name="content"  placeholder="내용을 입력하세요"></textarea>
             </div>
+            <div class="form-group">
+                <label> 게시글 비밀번호 </label>
+                <input type="text" class="form-control" name="password"  placeholder="비밀번호를 입력하세요">
+            </div>
+            <button type="submit" class="btn btn-primary" id="btn-save">등록</button>
+
         </form>
-        <a href="/" role="button" class="btn btn-secondary">취소</a>
-        <button type="button" class="btn btn-primary" id="btn-save">등록</button>
+        <a href="boardlist" role="button" class="btn btn-secondary">취소</a>
+
     </div>
 </div>
 
