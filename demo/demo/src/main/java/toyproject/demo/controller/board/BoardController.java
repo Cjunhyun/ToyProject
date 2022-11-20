@@ -4,10 +4,13 @@ package toyproject.demo.controller.board;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 import toyproject.demo.controller.board.model.GetBoardRes;
+import toyproject.demo.controller.board.model.GetBoardViewRes;
 import toyproject.demo.controller.board.model.PostBoardReq;
 
 import java.util.List;
@@ -50,5 +53,13 @@ public class BoardController {
         model.addAttribute("searchUrl", "boardlist");
         return "boardlist";
 
+    }
+
+    //게시글 상세페이지
+    @GetMapping("/board/{boardIdx}")
+    public String boardView(@PathVariable("boardIdx") int boarIdx, Model model) {
+        GetBoardViewRes getBoardViewRes = boardProvider.getBoardView(boarIdx);
+        model.addAttribute("getBoardViewRes",getBoardViewRes);
+        return "boardview";
     }
 }

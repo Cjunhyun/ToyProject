@@ -4,6 +4,7 @@ package toyproject.demo.controller.board;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import toyproject.demo.controller.board.model.GetBoardRes;
+import toyproject.demo.controller.board.model.GetBoardViewRes;
 
 import java.util.List;
 
@@ -22,5 +23,12 @@ public class BoardProvider {
     public List<GetBoardRes> getBoards() {
         List<GetBoardRes> getBoardRes = boardDao.getBoards();
         return getBoardRes;
+    }
+
+    //게시글 상세조회
+    public GetBoardViewRes getBoardView(int boardIdx) {
+        GetBoardViewRes getBoardViewRes = boardDao.getBoardView(boardIdx);
+        return getBoardViewRes;
+
     }
 }

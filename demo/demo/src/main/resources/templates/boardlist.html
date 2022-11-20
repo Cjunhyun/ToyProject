@@ -44,8 +44,10 @@
 
       <tr th:each="GetBoardRes, status: ${getBoardRes}">
         <td th:text = "${status.index}"></td>
-        <td th:text = "${GetBoardRes.title}"><a href="/posts/update/{{id}}"></a></td>
+        <td><a th:text = "${GetBoardRes.title}" th:href="@{/board/{boardIdx}(boardIdx=${GetBoardRes.boardIdx})}"></a></td>
         <td th:text = "${GetBoardRes.user}"></td>
+
+
 
       </tr>
 

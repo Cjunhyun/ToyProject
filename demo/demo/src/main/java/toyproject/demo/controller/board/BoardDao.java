@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import toyproject.demo.controller.board.model.GetBoardRes;
+import toyproject.demo.controller.board.model.GetBoardViewRes;
 import toyproject.demo.controller.board.model.PostBoardReq;
 import toyproject.demo.controller.board.model.PostBoardRes;
 
@@ -44,6 +45,17 @@ public class BoardDao {
         return this.jdbcTemplate.queryForObject(lastInsertIdQuery, int.class);
     }
 
-
+    //게시글 상세조회
+    public GetBoardViewRes getBoardView(int boardIdx) {
+        String getBoardViewQuery = "select * from Board where boardIdx = ?";
+        int getBoardViewParams = boardIdx;
+        return this.jdbcTemplate.queryForObject(getBoardViewQuery,
+                (rs, rowNum) -> new GetBoardViewRes(
+                        rs.getInt("boardIdx"),
+                        rs.getString("title"),
+                        rs.getString("user"),
+                        rs.getString("content")),
+                getBoardViewParams); // 한 개의 회원정보를 얻기 위한 jdbcTemplate 함수(Query, 객체 매핑 정보, Params)의 결과 반환
+    }
 
 }
