@@ -57,4 +57,12 @@ public class BoardDao {
                 getBoardViewParams); // 한 개의 회원정보를 얻기 위한 jdbcTemplate 함수(Query, 객체 매핑 정보, Params)의 결과 반환
     }
 
+    //게시글 삭제
+    public String deleteBoard(int boardIdx) {
+        String deleteBoardQuery = "delete from Board where boardIdx = ?";
+        int deleteBoardParams = boardIdx;
+        this.jdbcTemplate.update(deleteBoardQuery, deleteBoardParams);
+        return "삭제되었습니다.";
+    }
+
 }

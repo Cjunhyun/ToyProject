@@ -4,10 +4,7 @@ package toyproject.demo.src.board;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import toyproject.demo.src.board.model.GetBoardRes;
 import toyproject.demo.src.board.model.GetBoardViewRes;
 import toyproject.demo.src.board.model.PostBoardReq;
@@ -58,7 +55,19 @@ public class BoardController {
     @GetMapping("/board/{boardIdx}")
     public String boardView(@PathVariable("boardIdx") int boarIdx, Model model) {
         GetBoardViewRes getBoardViewRes = boardProvider.getBoardView(boarIdx);
-        model.addAttribute("getBoardViewRes",getBoardViewRes);
+        model.addAttribute("getBoardViewRes", getBoardViewRes);
         return "boardview";
+    }
+
+    //게시글 삭제
+    @GetMapping("/board/delete")
+    public String boardDeleteCheck() {
+        return "boardcheck";
+    }
+
+    @DeleteMapping("/board/{boardIdx}")
+    public String boardDelete(@PathVariable("boardIdx") int boardIdx, Model model) {
+        boardService.deleteBoard(boardIdx);
+        return "index";
     }
 }
