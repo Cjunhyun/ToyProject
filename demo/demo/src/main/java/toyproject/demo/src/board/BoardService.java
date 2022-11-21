@@ -1,9 +1,9 @@
-package toyproject.demo.controller.board;
+package toyproject.demo.src.board;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import toyproject.demo.controller.board.model.PostBoardReq;
+import toyproject.demo.src.board.model.PostBoardReq;
 
 @Service
 public class BoardService {

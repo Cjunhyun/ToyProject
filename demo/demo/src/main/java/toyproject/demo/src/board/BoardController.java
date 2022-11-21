@@ -1,4 +1,4 @@
-package toyproject.demo.controller.board;
+package toyproject.demo.src.board;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,10 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.multipart.MultipartFile;
-import toyproject.demo.controller.board.model.GetBoardRes;
-import toyproject.demo.controller.board.model.GetBoardViewRes;
-import toyproject.demo.controller.board.model.PostBoardReq;
+import toyproject.demo.src.board.model.GetBoardRes;
+import toyproject.demo.src.board.model.GetBoardViewRes;
+import toyproject.demo.src.board.model.PostBoardReq;
 
 import java.util.List;
 

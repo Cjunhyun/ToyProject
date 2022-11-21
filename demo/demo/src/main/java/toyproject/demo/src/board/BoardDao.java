@@ -1,12 +1,11 @@
-package toyproject.demo.controller.board;
+package toyproject.demo.src.board;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-import toyproject.demo.controller.board.model.GetBoardRes;
-import toyproject.demo.controller.board.model.GetBoardViewRes;
-import toyproject.demo.controller.board.model.PostBoardReq;
-import toyproject.demo.controller.board.model.PostBoardRes;
+import toyproject.demo.src.board.model.GetBoardRes;
+import toyproject.demo.src.board.model.GetBoardViewRes;
+import toyproject.demo.src.board.model.PostBoardReq;
 
 import javax.sql.DataSource;
 import java.util.List;

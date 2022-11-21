@@ -1,4 +1,4 @@
-package toyproject.demo.controller.board.model;
+package toyproject.demo.src.board.model;
 
 
 import lombok.AllArgsConstructor;
