@@ -9,6 +9,6 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class PostCreateUserRes {
+public class PostUserRes {
     int userIdx;
 }

@@ -7,9 +7,6 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class PostCreateUserReq {
-    String email;
-    String user;
-    String dogName;
-    String password;
+public class DeleteUserReq {
+    int userIdx;
 }
